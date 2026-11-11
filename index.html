@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sohel Khan — Performance &amp; UGC Video Editor CV</title>
+  <title>Sohel Khan</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -92,9 +92,9 @@
       <button onclick="copyLiveLink()" id="copyBtn" class="text-xs font-semibold text-slate-700 hover:text-slate-950 px-3 py-1.5 rounded border border-slate-300 hover:bg-slate-50 transition">
         Copy CV Link
       </button>
-      <a href="./Sohel_Khan_CV.pdf" download="Sohel_Khan_UGC_Editor_CV.pdf" onclick="handlePdfDownload(event)" class="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-black text-white text-xs font-bold px-3.5 py-1.5 rounded transition cursor-pointer">
+      <button onclick="window.print()" class="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-black text-white text-xs font-bold px-3.5 py-1.5 rounded transition cursor-pointer">
         Download / Save as PDF
-      </a>
+      </button>
     </div>
   </div>
 
@@ -242,22 +242,6 @@
         btn.innerText = 'Link Copied!';
         setTimeout(() => { btn.innerText = originalText; }, 2000);
       });
-    }
-
-    function handlePdfDownload(e) {
-      // If hosted alongside Sohel_Khan_CV.pdf, the browser downloads it directly;
-      // otherwise falls back cleanly to browser 1-page print-to-PDF.
-      fetch('./Sohel_Khan_CV.pdf', { method: 'HEAD' })
-        .then(res => {
-          if (!res.ok) {
-            e.preventDefault();
-            window.print();
-          }
-        })
-        .catch(() => {
-          e.preventDefault();
-          window.print();
-        });
     }
   </script>
 </body>
